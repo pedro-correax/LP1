@@ -3,6 +3,7 @@
     "prompt-sync": "^4.2.0"
   },
   "name": "pedro",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {},
