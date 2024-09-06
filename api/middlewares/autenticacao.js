@@ -31,7 +31,7 @@ exports.logar = async (req, res, next) => {
 
     console.log(usuarioBD)
 
-    jwt.sign(usuarioBD.toJSON(), chavePrivada, { expiresIn: '30 * 60000' }, (erro, token) => {
+    jwt.sign(usuarioBD.toJSON(), chavePrivada, { expiresIn: '30m' }, (erro, token) => {
       console.log(token)
       if (erro)
         return res.status(500).send({ msg: 'Erro ao gerar JWT!', erro });
