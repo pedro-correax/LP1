@@ -1,21 +1,32 @@
 const Usuario = require('../model/usuario.js');
+const bcrypt = require('bcrypt');
 
 exports.registrarUsuario = async (req, res) => {
-    const novoUsuario = req.headers.usuario;
-    const senhaNovoUsuario = req.headers.senha;
+  const usuario = req.headers.usuario;
+  const senha = req.headers.senha;
+  const email = req.headers.email;
 
-    try {
-        const usuarioJahexiste = await Usuario.findOne({ usurio: novoUsuario});
+  if (!usuario || !senha || !email)
+    return res.status(400).send({ msg: '[ERRO]: Informe usuario, senha e email!' });
 
-        if(usuarioJahexiste) {
-            return res.status(400).send({ msg: '[ERRO]: Usuário já cadastrado!' });
-        } else{
-            const senhaEncripitada = bcrypt.hash(senhaNovoUsuario, 10);
-        }
-    } catch (err) {
-        console.log(err);
-        return res.status(500).send({ msg: '[ERRO]: Erro ao registrar!', detalhes: err });
+  try {
+    const usuarioJahExiste = await Usuario.findOne({ usuario: usuario });
+    if (usuarioJahExiste) {
+      return res.status(400).send({ msg: '[ERRO]: usuário já cadastrado!' });
     }
 
+    const senhaEncriptada = await bcrypt.hash(senha, 10);
 
+    const novoUsuario = {
+      usuario: usuario,
+      email: email,
+      senha: senhaEncriptada
+    }
+
+    await Usuario.create(novoUsuario);
+    res.status(200).send({ msg: '[SUCESSO]: Usuário criado!', usuario: novoUsuario });
+  } catch (erro) {
+    console.log(erro);
+    res.status(500).send({ msg: '[ERRO]: Erro ao registrar usuário', detalhes: erro });
+  }
 }

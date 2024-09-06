@@ -1,9 +1,4 @@
-//email temporario mongodbatlas wocerih166@leacore.com
-/*
-import express from 'express';
-const app = express();
-import mongoose from 'mongoose';
-*/
+
 const express = require('express');
 const api = express();
 require('dotenv').config();
@@ -35,12 +30,13 @@ api.listen(portaApi, function() {
     console.log('API Online!');
 });
 
-const produtosController = require('./controller/produto.js');
-
+const estudantesController = require('./controller/estudantes.js');
+const usuarioController = require('./controller/usuario.js');
 const autenticacao = require('./middlewares/autenticacao.js');
 
 api.post('/login', autenticacao.logar);
-api.get('/produtos', autenticacao.autenticar, produtosController.listarProdutos);
-api.post('/produto', autenticacao.autenticar, produtosController.adicionarProduto);
-api.put('/produto', autenticacao.autenticar, produtosController.editarProduto);
-api.delete('/produto', autenticacao.autenticar, produtosController.removerProduto);
+api.post('/usuario', usuarioController.registrarUsuario);
+api.get('/estudantes', autenticacao.autenticar, estudantesController.listarEstudantes);
+api.post('/estudante', autenticacao.autenticar, estudantesController.adicionarEstudante);
+api.put('/estudante', autenticacao.autenticar, estudantesController.editarEstudante);
+api.delete('/estudante', autenticacao.autenticar, estudantesController.removerEstudante);
