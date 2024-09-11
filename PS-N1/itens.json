@@ -1,0 +1,71 @@
+[
+    { 
+    "nome": "Ana Silva",
+     "cpf": "123.456.789-01", 
+     "turma": "Turma A", 
+     "curso": "Matemática", 
+     "numeroMatricula": "20240001" },
+
+    { 
+     "nome": "João Pereira", 
+     "cpf": "123.456.789-02",
+     "turma": "Turma B", 
+     "curso": "Física", 
+     "numeroMatricula": "20240002" },
+   
+    { 
+     "nome": "Maria Oliveira", 
+     "cpf": "123.456.789-03", 
+     "turma": "Turma C", 
+     "curso": "Química",
+     "numeroMatricula": "20240003" },
+    
+    { 
+     "nome": "Pedro Santos", 
+     "cpf": "123.456.789-04", 
+     "turma": "Turma D", 
+     "curso": "Biologia", 
+     "numeroMatricula": "20240004" },
+   
+    { 
+     "nome": "Luana Costa", 
+     "cpf": "123.456.789-05", 
+     "turma": "Turma E", 
+     "curso": "História", 
+     "numeroMatricula": "20240005" },
+   
+    {
+     "nome": "Carlos Lima", 
+     "cpf": "123.456.789-06",
+     "turma": "Turma F", 
+     "curso": "Geografia", 
+     "numeroMatricula": "20240006" },
+    
+    { 
+     "nome": "Fernanda Almeida", 
+     "cpf": "123.456.789-07", 
+     "turma": "Turma G", 
+     "curso": "Literatura", 
+     "numeroMatricula": "20240007" },
+   
+    { 
+     "nome": "Roberto Mendes", 
+     "cpf": "123.456.789-08", 
+     "turma": "Turma H", 
+     "curso": "Arte", 
+     "numeroMatricula": "20240008" },
+    
+    { 
+     "nome": "Juliana Rocha", 
+     "cpf": "123.456.789-09", 
+     "turma": "Turma I", 
+     "curso": "Educação Física", 
+     "numeroMatricula": "20240009" },
+    
+    { 
+     "nome": "Gabriel Martins", 
+     "cpf": "123.456.789-10", 
+     "turma": "Turma J", 
+     "curso": "Música", 
+     "numeroMatricula": "20240010" }
+]
