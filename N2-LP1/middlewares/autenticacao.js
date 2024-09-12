@@ -29,7 +29,6 @@ exports.logar = async (req, res, next) => {
     delete usuarioBD._id;
     delete usuarioBD.senha;
 
-    console.log(usuarioBD)
 
     jwt.sign(usuarioBD.toJSON(), chavePrivada, { expiresIn: '30m' }, (erro, token) => {
       console.log(token)
